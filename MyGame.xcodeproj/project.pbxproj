@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		ECD8F3B025AE2D52003B545D /* MyGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD8F3AF25AE2D52003B545D /* MyGameApp.swift */; };
-		ECD8F3B225AE2D52003B545D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD8F3B125AE2D52003B545D /* ContentView.swift */; };
+		ECD8F3B225AE2D52003B545D /* DropGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD8F3B125AE2D52003B545D /* DropGameView.swift */; };
 		ECD8F3B425AE2D53003B545D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD8F3B325AE2D53003B545D /* Assets.xcassets */; };
 		ECD8F3B725AE2D53003B545D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD8F3B625AE2D53003B545D /* Preview Assets.xcassets */; };
+		ECD8F3C925AE2F6D003B545D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD8F3C825AE2F6D003B545D /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ECD8F3AC25AE2D52003B545D /* MyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD8F3AF25AE2D52003B545D /* MyGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGameApp.swift; sourceTree = "<group>"; };
-		ECD8F3B125AE2D52003B545D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECD8F3B125AE2D52003B545D /* DropGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropGameView.swift; sourceTree = "<group>"; };
 		ECD8F3B325AE2D53003B545D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECD8F3B625AE2D53003B545D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ECD8F3B825AE2D53003B545D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD8F3C825AE2F6D003B545D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,9 @@
 		ECD8F3AE25AE2D52003B545D /* MyGame */ = {
 			isa = PBXGroup;
 			children = (
-				ECD8F3AF25AE2D52003B545D /* MyGameApp.swift */,
-				ECD8F3B125AE2D52003B545D /* ContentView.swift */,
-				ECD8F3B325AE2D53003B545D /* Assets.xcassets */,
-				ECD8F3B825AE2D53003B545D /* Info.plist */,
+				ECD8F3C525AE2EF0003B545D /* Scenes */,
+				ECD8F3C025AE2E0C003B545D /* Controller */,
+				ECD8F3BF25AE2DBE003B545D /* Resources */,
 				ECD8F3B525AE2D53003B545D /* Preview Content */,
 			);
 			path = MyGame;
@@ -67,6 +68,32 @@
 				ECD8F3B625AE2D53003B545D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECD8F3BF25AE2DBE003B545D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ECD8F3B325AE2D53003B545D /* Assets.xcassets */,
+				ECD8F3B825AE2D53003B545D /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ECD8F3C025AE2E0C003B545D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECD8F3AF25AE2D52003B545D /* MyGameApp.swift */,
+				ECD8F3B125AE2D52003B545D /* DropGameView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ECD8F3C525AE2EF0003B545D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ECD8F3C825AE2F6D003B545D /* GameScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECD8F3B225AE2D52003B545D /* ContentView.swift in Sources */,
+				ECD8F3C925AE2F6D003B545D /* GameScene.swift in Sources */,
+				ECD8F3B225AE2D52003B545D /* DropGameView.swift in Sources */,
 				ECD8F3B025AE2D52003B545D /* MyGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +299,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MyGame/Preview Content\"";
 				DEVELOPMENT_TEAM = GB6T394FVB;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MyGame/Info.plist;
+				INFOPLIST_FILE = MyGame/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +321,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MyGame/Preview Content\"";
 				DEVELOPMENT_TEAM = GB6T394FVB;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MyGame/Info.plist;
+				INFOPLIST_FILE = MyGame/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
