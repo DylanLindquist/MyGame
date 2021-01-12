@@ -34,6 +34,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         node.position = location
         
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: width, height: height))
+        node.physicsBody?.contactTestBitMask = UInt32(colorMask)
         
         addChild(node)
     }
@@ -43,8 +44,19 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         let colors : [UIColor] = [.red, .blue, .green, .orange, .white, .magenta, .yellow]
         let randomIndex = Int(arc4random()) % colors.count
         
+        colorMask = randomIndex + 1
+        
         return colors[randomIndex]
     }
+    //Checks for contact
+    func didBegin(_ contact : SKPhysicsContact) -> Void
+    {
+        guard let first = contact.bodyA.node else { return }
+        guard let second = contact.bodyB.node else { return }
+        
+        collisionBetween(first, and: second)
+    }
+    
     //Distinguishes color
     private func collisionBetween(_ nodeOne : SKNode, and nodeTwo : SKNode) -> Void
     {
