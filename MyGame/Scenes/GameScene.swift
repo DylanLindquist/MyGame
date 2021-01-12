@@ -18,7 +18,7 @@ class GameScene : SKScene
     {
         guard let touch = touches.first else { return }
         
-        let currentColor = UIColor.magenta
+        let currentColor = assignColorAndBitmask()
         
         let width = Int(arc4random() % 50)
         let height = Int(arc4random() % 50)
@@ -37,7 +37,7 @@ class GameScene : SKScene
     
     private func assignColorAndBitmask() -> UIColor
     {
-        let colors : [UIColor] = [.black, .blue, .green, .green, .gray, .systemPink, .yellow]
+        let colors : [UIColor] = [.red, .blue, .green, .orange, .white, .magenta, .yellow]
         let randomIndex = Int(arc4random()) % colors.count
         
         return colors[randomIndex]
