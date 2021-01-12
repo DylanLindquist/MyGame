@@ -7,11 +7,14 @@
 
 import SpriteKit
 
-class GameScene : SKScene
+class GameScene : SKScene, SKPhysicsContactDelegate
 {
+    private var colorMask : Int = 0b0000
+    
     override func didMove(to view: SKView) -> Void
     {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        physicsWorld.contactDelegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) -> Void
@@ -41,5 +44,19 @@ class GameScene : SKScene
         let randomIndex = Int(arc4random()) % colors.count
         
         return colors[randomIndex]
+    }
+    //Distinguishes color
+    private func collisionBetween(_ nodeOne : SKNode, and nodeTwo : SKNode) -> Void
+    {
+        if (nodeOne.physicsBody?.contactTestBitMask == nodeTwo.physicsBody?.contactTestBitMask)
+        {
+            annihilate(deadNode: nodeOne)
+            annihilate(deadNode: nodeTwo)
+        }
+    }
+    //Takes node out
+    private func annihilate(deadNode : SKNode) -> Void
+    {
+        deadNode.removeFromParent()
     }
 }
