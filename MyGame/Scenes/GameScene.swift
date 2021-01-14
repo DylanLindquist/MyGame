@@ -25,7 +25,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     {
         //Add Score
         scoreNode.zPosition = 2
-        scoreNode.position.x = 120
+        scoreNode.position.x = 150
         scoreNode.position.y = 385
         scoreNode.fontSize = 20
         addChild(scoreNode)
@@ -87,6 +87,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     //Takes node out
     private func annihilate(deadNode : SKNode) -> Void
     {
+        score += 5
         deadNode.removeFromParent()
     }
 }
