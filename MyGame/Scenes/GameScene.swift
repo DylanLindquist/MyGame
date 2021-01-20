@@ -90,4 +90,9 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         score += 5
         deadNode.removeFromParent()
     }
+    
+    private func explosionEffect(at location : CGPoint) -> Void
+    {
+        
+    }
 }
